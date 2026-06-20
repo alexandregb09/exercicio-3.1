@@ -1,4 +1,4 @@
-# Relatório Técnico: Diagnóstico de Processo e Service Blueprint AS-IS
+﻿# Relatório Técnico: Diagnóstico de Processo e Service Blueprint AS-IS
 **Serviço:** Consulta Médica Especializada (Ambulatorial)  
 **Escopo:** Secretaria de Estado da Saúde de São Paulo (SES-SP) no contexto do SUS  
 **Abordagem:** Desenho de Serviços e Jornada do Cidadão  
@@ -79,8 +79,14 @@ Mapeamento integrado das três linhas fundamentais do serviço que ocorrem em ca
     *   *Dificuldades:* Longo tempo de espera na fila da própria UBS para conseguir a consulta inicial com o médico generalista.
 *   **Linha de Visibilidade (Pontos de Contato):** O cidadão visualiza o consultório médico, o profissional preenchendo a guia e o balcão administrativo da UBS. É emitida a Guia de Referência do SUS.
 *   **Linha de Retaguarda (Bastidores):** 
-    *   *Processo:* Avaliação da necessidade clínica $ightarrow$ Médico da UBS $ightarrow$ Prontuário Eletrônico Municipal $ightarrow$ Registro clínico.
-    *   *Processo:* Inserção do pedido no sistema estadual $ightarrow$ Operador de Regulação Municipal $ightarrow$ Plataforma SIRESP (Módulo Ambulatorial) $ightarrow$ Solicitação em status "Aguardando Avaliação".
+    *   *Processo:* Avaliação da necessidade clínica $
+ightarrow$ Médico da UBS $
+ightarrow$ Prontuário Eletrônico Municipal $
+ightarrow$ Registro clínico.
+    *   *Processo:* Inserção do pedido no sistema estadual $
+ightarrow$ Operador de Regulação Municipal $
+ightarrow$ Plataforma SIRESP (Módulo Ambulatorial) $
+ightarrow$ Solicitação em status "Aguardando Avaliação".
 
 ### Macroetapa B: Regulação e Agendamento (Processamento do Estado)
 *   **Linha de Interação (Visão do Cidadão):**
@@ -92,9 +98,19 @@ Mapeamento integrado das três linhas fundamentais do serviço que ocorrem em ca
     *   *Dificuldades:* Ausência de transparência sobre sua posição na fila ("caixa preta").
 *   **Linha de Visibilidade (Pontos de Contato):** Recebimento de chamada telefônica ou SMS informativo. Retirada da Ficha de Agendamento CROSS impressa na UBS. O cidadão não possui acesso direto aos sistemas de regulação do Estado.
 *   **Linha de Retaguarda (Bastidores):**
-    *   *Processo:* Classificação de risco clínico $ightarrow$ Médico Regulador CROSS $ightarrow$ SIRESP $ightarrow$ Atribuição de prioridade (P1 a P4).
-    *   *Processo:* Parametrização de agendas $ightarrow$ Núcleo de Regulação Interna (NIR) do AME/Hospital $ightarrow$ Sistema de Informação Hospitalar Interno (ex: MV) $ightarrow$ Vagas disponibilizadas via barramento no SIRESP.
-    *   *Processo:* Vinculação de vaga (Match) $ightarrow$ Algoritmo/Operador CROSS $ightarrow$ SIRESP $ightarrow$ Vaga reservada para o CNS do paciente.
+    *   *Processo:* Classificação de risco clínico $
+ightarrow$ Médico Regulador CROSS $
+ightarrow$ SIRESP $
+ightarrow$ Atribuição de prioridade (P1 a P4).
+    *   *Processo:* Parametrização de agendas $
+ightarrow$ Núcleo de Regulação Interna (NIR) do AME/Hospital $
+ightarrow$ Sistema de Informação Hospitalar Interno (ex: MV) $
+ightarrow$ Vagas disponibilizadas via barramento no SIRESP.
+    *   *Processo:* Vinculação de vaga (Match) $
+ightarrow$ Algoritmo/Operador CROSS $
+ightarrow$ SIRESP $
+ightarrow$ Vaga reservada para o CNS do paciente.
+    *   *Processo — Gestão de Agenda (backstage NIR):* O Núcleo Interno de Regulação (NIR) realiza a **abertura de agenda** no sistema interno (MV ou similar) e carrega vagas no SIRESP periodicamente, conforme metas contratuais. Bloqueios de agenda por férias médicas ou indisponibilidade de sala devem ser registrados com antecedência no SIRESP; quando não o são, geram vagas ociosas sem comunicação ao paciente. O NIR gerencia também **encaixes** (slots emergenciais) para absorver devoluções de vagas e casos P1 reclassificados. Fluxo: NIR parametriza agenda → sistema interno → carga no SIRESP → vagas disponíveis para match pela CROSS.
 
 ### Macroetapa C: Atendimento e Desfecho (Na Unidade Estadual - AME/Hospital)
 *   **Linha de Interação (Visão do Cidadão):**
@@ -106,9 +122,23 @@ Mapeamento integrado das três linhas fundamentais do serviço que ocorrem em ca
     *   *Dificuldades:* Custos e desgaste com o deslocamento intermunicipal; sair da consulta com pedidos de exames sem saber onde realizá-los.
 *   **Linha de Visibilidade (Pontos de Contato):** Estrutura física do AME, guichê de recepção, painel eletrônico de senhas, consultório do especialista, computadores com o prontuário interno. Emissão de receita médica, solicitações de exames e contrarreferência escrita.
 *   **Linha de Retaguarda (Bastidores):**
-    *   *Processo:* Abertura de atendimento $ightarrow$ Recepcionista do AME $ightarrow$ Prontuário Eletrônico Interno (ex: MV) $ightarrow$ Prontuário ativado na fila médica.
-    *   *Processo:* Registro clínico e codificação $ightarrow$ Médico Especialista $ightarrow$ Prontuário Eletrônico Interno $ightarrow$ Evolução clínica salva e assinada digitalmente com certificado ICP-Brasil (inserção de CID-10).
-    *   *Processo:* Faturamento SUS $ightarrow$ Setor de Faturamento do AME $ightarrow$ Sistema de Informação Ambulatorial (SIA-SUS) $ightarrow$ Geração de BPA-I ou APAC para repasse financeiro contratual (metas da Resolução SS-SP nº 44/2021).
+    *   *Processo:* Abertura de atendimento $
+ightarrow$ Recepcionista do AME $
+ightarrow$ Prontuário Eletrônico Interno (ex: MV) $
+ightarrow$ Prontuário ativado na fila médica.
+    *   *Processo:* Registro clínico e codificação $
+ightarrow$ Médico Especialista $
+ightarrow$ Prontuário Eletrônico Interno $
+ightarrow$ Evolução clínica salva e assinada digitalmente com certificado ICP-Brasil (inserção de CID-10).
+    *   *Processo:* Faturamento SUS $
+ightarrow$ Setor de Faturamento do AME $
+ightarrow$ Sistema de Informação Ambulatorial (SIA-SUS) $
+ightarrow$ Geração de BPA-I ou APAC para repasse financeiro contratual (metas da Resolução SS-SP nº 44/2021).
+    *   *Processo — Recepção e Faturamento (backstage):* A recepção do AME realiza **conferência documental** (ficha CROSS, RG, CNS e exames anteriores) e **validação de cadastro** no sistema interno antes de abrir o atendimento no prontuário. O NIR registra o comparecimento no SIRESP, contabilizando a vaga como "realizada" para fins de meta contratual. O setor de faturamento codifica a produção em BPA-I ou APAC para submissão ao SIA-SUS até o dia 5 do mês seguinte; **glosas** ocorrem por CID-10 incompatível, APAC sem autorização prévia ou prontuário sem assinatura digital ICP-Brasil. O repasse financeiro à unidade (ou OSS) é calculado sobre a produção aprovada descontadas as glosas.
+
+### Estrutura dos Contratos de Gestão com OSS
+
+Os AMEs e Hospitais Estaduais geridos por Organizações Sociais de Saúde operam sob **Contratos de Gestão** celebrados com a SES-SP (Lei Federal nº 9.637/1998; Decreto Estadual SP nº 43.493/1998). Elementos essenciais: (a) **metas quantitativas** de primeiras consultas e retornos definidas pela Resolução SS-SP nº 44/2021; (b) **indicadores de qualidade** (taxa de absenteísmo ≤ 25%, tempo médio de espera por especialidade); (c) **Comissão de Acompanhamento do Contrato (CAC)** com reuniões mensais paritárias (SES-SP + OSS); (d) **repasse financeiro** com parcela fixa (custeio da estrutura) e parcela variável (produção assistencial aprovada); (e) **fiscalização** pelos DRS com visitas técnicas periódicas e auditoria documental amostral. O descumprimento de metas gera glosa contratual proporcional; a superação pode gerar repasse de incentivo, conforme cláusula específica.
 
 ---
 
