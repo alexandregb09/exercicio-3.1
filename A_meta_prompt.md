@@ -1,4 +1,4 @@
-# Prompt Atualizado:
+# Prompt Atualizado e Aprimorado:
 
 Atue como especialista em **gestão de serviços públicos de saúde, desenho de processos, jornada do cidadão e Service Blueprint**. Realize uma pesquisa aprofundada sobre o serviço de **Consulta Médica Especializada Ambulatorial**, prestada em modalidade **presencial** nos **Ambulatórios Médicos de Especialidades (AMEs)** e **Hospitais Estaduais** geridos pela **Secretaria de Estado da Saúde de São Paulo (SES-SP)** diretamente ou por meio de Contratos de Gestão com Organizações Sociais de Saúde (OSS), considerando a perspectiva do cidadão usuário do Sistema Único de Saúde (SUS) no Estado de São Paulo. O serviço abrange exclusivamente a **média e alta complexidade ambulatorial**, com acesso regulado pela **CROSS (Central de Regulação de Ofertas de Serviços de Saúde)** por meio do **SIRESP (Sistema Informatizado de Regulação do Estado de São Paulo)**, organizado regionalmente pelos **17 Departamentos Regionais de Saúde (DRS)** da SES-SP.
 
@@ -77,9 +77,9 @@ Para cada etapa:
 
 ---
 
-## Linha de retaguarda (processos de bastidor)
+## Linha de retaguarda (processos de bastidor / backstage)
 
-Mapeie tudo que acontece fora da visão do cidadão.
+Mapeie tudo que acontece fora da visão do cidadão, superando a visão restrita da linha de frente para expor as engrenagens ocultas da máquina pública.
 
 Para cada etapa, identifique:
 
@@ -131,7 +131,7 @@ Classifique como:
 
 * Evidência física;
 * Evidência digital;
-* Comunicação institucional;
+* Comunicação institutional;
 * Documento gerado.
 
 ---
@@ -159,9 +159,9 @@ Para cada norma apresentar:
 
 ---
 
-# 5. Identificação de Fail Points (pontos de falha)
+# 5. Identificação de Fail Points e Gargalos Conhecidos (pontos de falha)
 
-Mapeie os principais pontos onde o serviço pode falhar. **A identificação de cada ponto de falha deve estar diretamente conectada à pesquisa estruturada descrita na Seção 0.**
+Mapeie os principais pontos onde o serviço pode falhar, conectando as falhas da experiência do usuário aos gargalos de retaguarda levantados na Seção 0.
 
 Classifique:
 
@@ -177,7 +177,7 @@ Exemplos:
 * ausência de comunicação;
 * dificuldade de continuidade do cuidado.
 
-## Falhas internas
+## Falhas internas e de bastidor (Gargalos Operacionais)
 
 Exemplos:
 
